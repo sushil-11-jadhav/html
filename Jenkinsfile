@@ -7,8 +7,8 @@ pipeline {
 		}
 		stages {
 				stage ("23Q1-80") {
-						dir ("/mnt/doc/html/23Q1") {
 						steps {
+						dir ("/mnt/doc/html/23Q1") {
 								sh "rm -rf /mnt/doc/*"
 								sh "docker kill server1"
 								sh "docker system prune -a -f"
@@ -20,8 +20,8 @@ pipeline {
 						}
 				}
 				stage ("23Q2-90") {
-						dir ("/mnt/doc/html/23Q2") {
 						steps {
+							 dir ("/mnt/doc/html/23Q2") {
 								sh "docker kill server2"
 								sh "docker system prune -a -f"
 								sh "git clone https://github.com/sushil-11-jadhav/html.git -b 23Q2"
@@ -32,8 +32,8 @@ pipeline {
 				}
 				}
 				stage ("23Q3-8081") {
-						dir ("/mnt/doc/html/23Q3") {
 						steps {
+							dir ("/mnt/doc/html/23Q3") {
 								sh "docker kill server3"
 								sh "docker system prune -a -f"
 								sh "git clone https://github.com/sushil-11-jadhav/html.git -b 23Q3"

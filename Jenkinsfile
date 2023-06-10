@@ -8,6 +8,7 @@ pipeline {
 		stages {
 			stage ("stage-1") {
 				steps {
+					sh "service docker start"
 					sh "rm -rf /mnt/vol/*"
 					sh "docker kill unit1"
 					sh "docker system prune -a -f"

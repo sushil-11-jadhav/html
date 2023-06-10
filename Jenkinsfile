@@ -1,12 +1,13 @@
 pipeline {
-		agent {
-			label {
-					label "built-in"
-					customWorkspace "/mnt/vol"
-			}
-		}
+
 		stages {
 			stage ("stage-1") {
+			agent {
+				label {
+					label "built-in"
+					customWorkspace "/mnt/vol"
+				}
+			}
 				steps {
 					sh "service docker start"
 					sh "rm -rf /mnt/vol/*"
